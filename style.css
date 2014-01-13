@@ -1,0 +1,51 @@
+.content {
+    max-width: 50em;
+    margin: 0 auto;
+    padding: 1em;
+    border-radius: 1em;
+    border: 1px solid #dde;
+    background-color: #eef;
+    box-shadow: 0 0 5px #aae;
+}
+
+h1, h2, h3, h4, h5 {
+    color: #005;
+}
+
+.content h1 {
+    border-bottom: 6px double #005;
+}
+
+.content h2 {
+    margin-top: 3em;
+    color: white;
+    background-color: #005;
+    border-radius: 1em;
+    padding: 0.1em 1em;
+}
+
+.content code {
+    font-weight: bold;
+    background-color: white;
+}
+
+.content .codeexample {
+    font-family: monospace;
+    background-color: #111;
+    color: #8f8;
+    font-weight: bold;
+    font-size: 80%;
+    margin: 2em 2em;
+    padding: 0em 1em;
+    white-space: pre;
+    box-shadow: inset 3px 3px 3px rgba(255,255,255,0.5);
+    overflow-x: auto;
+}
+
+.content ul.psg_gallerified {
+    margin: 1em 0;
+    padding: 1em 0;
+    border-top: 3px solid #005;
+    border-bottom: 3px solid #005;
+    background-color: rgba(255,255,255,0.5);
+}

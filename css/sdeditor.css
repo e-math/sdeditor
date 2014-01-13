@@ -1,0 +1,593 @@
+/*{{{*/
+
+
+/**********************************
+ * QedEditor
+ **********************************/
+.qededitor {}
+
+.qededitor {
+    position: relative;
+}
+
+/**********************************
+ * Structured derivation -block
+ **********************************/
+
+.structuredderivation {
+    position: relative;
+    margin: 0;
+    padding: 0.3em;
+}
+
+/**********************************
+ * Look of structured derivation
+ **********************************/
+
+.structuredderivation {
+    font-size: 100%;
+    min-height: 15em;
+    border-width: 8px 1px 8px 1px;
+    -moz-border-image: url(../images/paperrip.png) 8 1 8 1 repeat repeat;
+    -webkit-border-image: url(../images/paperrip.png) 8 1 8 1 repeat repeat;
+    -o-border-image: url(../images/paperrip.png) 8 1 8 1 repeat repeat;
+    border-image: url(../images/paperrip.png) 8 1 8 1 fill repeat repeat;
+    border-style: solid;
+}
+
+.structuredderivation table.sdtable {
+    border-collapse: collapse;
+    border: none;
+    margin: 0;
+    padding: 0.3em 0;
+    background: transparent none;
+    width: 100%;
+}
+
+.structuredderivation table.sdtable td {
+    padding: 0;
+    margin: 0;
+    vertical-align: middle;
+}
+
+.structuredderivation  table.sdtable table.sdtable {
+    border-collapse: collapse;
+    background: none;
+    border-width: 0;
+    border-image: none;
+    -moz-border-image: none;
+    -webkit-border-image: none;
+    -o-border-image: none;
+    border: none;
+}
+
+.structuredderivation .sdtable td:first-child {
+    min-width: 2em;
+    max-width: 6em;
+    width: 4em;
+    text-align: center;
+    padding: 0;
+    overflow: visible;
+}
+
+.structuredderivation .sdtable td:first-child+td {
+    padding: 0.3em 0;
+}
+
+.structuredderivation .sdtable tr, 
+.structuredderivation .sdtable td {
+    border: none;
+}
+
+.structuredderivation .qededitorbuttons {
+    display: block;
+    margin:0;
+}
+
+.structuredderivation .qededitorbuttons a.button {
+    display: inline-block;
+    vertical-align: bottom;
+    width: 1em;
+    height: 1em;
+    border-top: 2px solid #faa;
+    border-left: 2px solid #faa;
+    border-right: 2px solid #faa;
+    border-radius: 8px 8px 0 0;
+    -webkit-border-radius: 8px 8px 0 0;
+}
+
+.structuredderivation .qededitorbuttons a.button:hover {
+    background-color: #faa;
+    text-decoration: none;
+}
+
+.structuredderivation .qededitorbuttons a.button span {
+    width: 0.9em;
+    height: 0.9em;
+}
+
+.structuredderivation .button.command_qededit {
+  background: transparent url('../images/button-edit.png') center center no-repeat;
+}
+
+.structuredderivation .button.command_qedundo,
+.structuredderivation .button.command_qedredo {
+    font-weight: bold;
+    font-size: 180%;
+    color: #ddd;
+    text-align: center;
+}
+.structuredderivation .button.command_qedundo.active,
+.structuredderivation .button.command_qedredo.active {
+    color: black;
+}
+.structuredderivation a.button.command_qedclose.command_editorclose {
+  display: inline-block;
+  background: transparent url('../images/button-close.png') center center no-repeat;
+}
+
+.structuredderivation table.sdtable .mathquill-editable {
+    border: none;
+    margin: 0 0.3em 0 0.3em;
+    display: block;
+}
+
+.structuredderivation table.sdtable .relation .mathquill-editable {
+    border: none;
+    margin: 0 0.3em 0 0;
+}
+
+.structuredderivation table.sdtable .mathquill-editable:hover {
+    background-color: rgba(190,240,255,0.2);
+}
+
+.structuredderivation table.sdtable .mathquill-textbox:hover {
+    background-color: rgba(255,170,170,0.2);
+}
+
+.structuredderivation table.sdtable td.motivation span.motivationstring:before,
+.structuredderivation table.sdtable td.obsmotivation span.motivationstring:before,
+.structuredderivation table.sdtable td.derivmotivation span.motivationstring:before {
+    content: "{ ";
+}
+
+.structuredderivation table.sdtable td.motivation span.motivationstring:after,
+.structuredderivation table.sdtable td.obsmotivation span.motivationstring:after,
+.structuredderivation table.sdtable td.derivmotivation span.motivationstring:after {
+    content: " }";
+}
+
+
+/*********************************
+ * Editing look
+ *********************************/
+
+div.structuredderivation.sdediting span.motivationstring span.mathquill-textbox {
+    display: inline-block;
+}
+
+div.structuredderivation.sdediting table.sdtable {
+    border: 4px solid #faa;
+}
+
+div.structuredderivation.sdediting table.sdtable table.sdtable {
+    border: none;
+}
+
+.structuredderivation.sdediting table.sdtable td.motivation span.motivationstring:before,
+.structuredderivation.sdediting table.sdtable td.obsmotivation span.motivationstring:before,
+.structuredderivation.sdediting table.sdtable td.derivmotivation span.motivationstring:before {
+    content: none;
+}
+
+.structuredderivation.sdediting table.sdtable td.motivation span.motivationstring:after,
+.structuredderivation.sdediting table.sdtable td.obsmotivation span.motivationstring:after,
+.structuredderivation.sdediting table.sdtable td.derivmotivation span.motivationstring:after {
+    content: none;
+}
+
+.structuredderivation.sdediting table.sdtable td.motivation span.motivationstring span.mathquill-textbox:before,
+.structuredderivation.sdediting table.sdtable td.obsmotivation span.motivationstring span.mathquill-textbox:before,
+.structuredderivation.sdediting table.sdtable td.derivmotivation span.motivationstring span.mathquill-textbox:before {
+    content: "{ ";
+}
+
+.structuredderivation.sdediting table.sdtable td.motivation span.motivationstring span.mathquill-textbox:after,
+.structuredderivation.sdediting table.sdtable td.obsmotivation span.motivationstring span.mathquill-textbox:after,
+.structuredderivation.sdediting table.sdtable td.derivmotivation span.motivationstring span.mathquill-textbox:after {
+    content: " }";
+    visibility: visible;
+}
+
+div.structuredderivation.sdediting td.virgin {
+    background-color: rgba(170,170,255,0.6);
+    background-color: #e7fdfa;
+}
+
+div.structuredderivation td.term a.addstep {
+    display: block;
+    height: 3px;
+    margin-top: 5px;
+    margin-bottom: -8px;
+    background-color: rgba(255,255,170,0.5);
+}
+
+div.structuredderivation td.term:hover > a.addstep,
+div.structuredderivation td.term > a.addstep:active {
+    display: block;
+    height: 7px;
+    margin-top: 5px;
+    margin-bottom: -12px;
+    background-color: rgba(255,255,80,0.5);
+    overflow: visible;
+}
+
+div.structuredderivation td.term a.addstep span {
+   display: none;
+}
+
+div.structuredderivation tr:hover > td.term > a.addstep span {
+    display: block;
+    position: absolute;
+    right: 3em;
+    margin-top: -0.75em;
+}
+
+div.structuredderivation td > .sdbeforebuttons {
+    display: none;
+    position: absolute;
+    left: -0.5em;
+    margin-top: -0.4em;
+}
+
+div.structuredderivation td > .sdafterbuttons {
+    display: none;
+    position: absolute;
+    right: 1.5em;
+    margin-top: -1.5em;
+}
+
+div.structuredderivation td .sdbeforebuttons .sdaddbutton,
+div.structuredderivation td .sdafterbuttons .sdaddbutton,
+div.structuredderivation td .sdaddbutton {
+    display: block;
+    text-align: center;
+    vertical-align: middle;
+    width: 1.2em;
+    height: 1.2em;
+    font-size: 120%;
+    font-weight: bold;
+    color: #9f9;
+    background-color: white;
+    color: white;
+    background-color: #445016;
+    border-radius: 0.75em;
+    -webkit-border-radius: 0.75em;
+    -o-border-radius: 0.75em;
+    float:left;
+    text-decoration: none;
+}
+
+div.structuredderivation td .sdbeforebuttons .sdremovebutton,
+div.structuredderivation td .sdafterbuttons .sdremovebutton,
+div.structuredderivation td .sdremovebutton {
+    display: block;
+    text-align: center;
+    vertical-align: middle;
+    width: 1.2em;
+    height: 1.2em;
+    font-size: 120%;
+    font-weight: bold;
+    color: #f99;
+    background-color: white;
+    color: white;
+    background-color: #a00;
+    border-radius: 0.75em;
+    -webkit-border-radius: 0.6em;
+    -o-border-radius: 0.6em;
+    float:left;
+    text-decoration: none;
+}
+
+div.structuredderivation td .sdremovebutton:hover {
+    color: #a00;
+    box-shadow: 0 0 2px rgba(170,0,0,0.5);
+}
+
+div.structuredderivation td .sdaddbutton:hover {
+    color: #0a0;
+    box-shadow: 0 0 2px rgba(0,170,0,0.5);
+}
+
+div.structuredderivation td .sdremovebutton:hover > span {
+    color: white;
+}
+
+div.structuredderivation td .sdaddbutton:hover > span {
+    color: white;
+}
+
+div.structuredderivation.sdediting tr:hover > td > .sdafterbuttons,
+div.structuredderivation.sdediting tr:hover > td > .sdbeforebuttons {
+    display: block;
+}
+
+div.structuredderivation tr td.subder {
+    vertical-align: top;
+}
+
+#mathbuttonwrapper {
+    position: absolute;
+    right: 6.5em;
+}
+
+#mathbuttonpanel {
+    position: fixed;
+    background: white;
+    border: 1px solid #faa;
+    width: auto;
+    z-index: 10;
+}
+
+#mathbuttonpanel {
+    top: 8em;
+/*     right: 0; */
+}
+
+#mathbuttonpanel .buttontablelist {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+#mathbuttonpanel .buttoncatwrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+#mathbuttonpanel .buttontablelist li.buttontableicon {
+    margin: 0px;
+    padding: 2px;
+    border: 1px solid #faa;
+    position: relative;
+    font-size: 160%;
+}
+#mathbuttonpanel .buttontablelist li.buttontableicon:hover {
+    background-color: #faa;
+}
+#mathbuttonpanel .buttontablelist li.buttontableicon > a {
+    display: block;
+    text-align: center;
+}
+#mathbuttonpanel .buttontablelist li.buttontableicon > a {
+    text-decoration: none;
+}
+#mathbuttonpanel .buttontablelist li.buttontableicon > a > span.buttoncategoryname{
+    display: block;
+    text-align: center;
+    font-size: 70%;
+}
+#mathbuttonpanel .buttontablelist li.buttontableicon:hover .buttonelementtable {
+    display: block;
+}
+#mathbuttonpanel .buttontablelist li.buttontableicon .buttonelementtable {
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 0;
+    background-color: white;
+    border: 1px solid #faa;
+}
+#mathbuttonpanel .buttontablelist li.buttontableicon .buttonelementtable td:hover {
+    background-color: #faa;
+}
+#mathbuttonpanel .buttontablelist li.buttontableicon .buttonelementtable td a.buttonlink {
+    display: block;
+    text-align: center;
+    padding: 0.3em 0.5em;
+}
+#mathbuttonpanel .buttontablelist li.buttontableicon .buttonelementtable td a.buttonlink:hover {
+    text-decoration: none;
+}
+
+.sdediting div.sdsubderivation {
+    border: 1px dashed transparent;
+    position: relative;
+    margin: 0;
+    padding: 0;
+}
+
+.sdediting div.sdsubderivation:hover {
+    border: 1px dashed #aaa;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -o-border-radius: 5px;
+}
+
+/**** hide subderivations *************/
+tr.sdhidden > td > div.sdsubderivation {
+    display: none;
+}
+
+td.ldots:hover,
+td.ldots:hover span {
+    cursor: pointer;
+}
+
+/********* editormenu ****************/
+#qededitormenuwrapper {
+    text-align: left;
+    position: absolute;
+    background-color: #fffdB7;
+    border: 1px solid #aaa;
+    z-index: 5000;
+}
+
+#qededitormenuwrapper ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+#qededitormenuwrapper ul li {
+    margin: 0;
+    padding: 0.2em 0.3em;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+}
+
+#qededitormenuwrapper ul li.selected {
+    cursor: pointer;
+    background-color: #ffd500;
+}
+
+#qededitormenuwrapper ul li.plus a {
+    color: #445016;
+}
+
+#qededitormenuwrapper ul li.plus.selected {
+    color: white;
+    background-color: #445016;
+}
+
+#qededitormenuwrapper ul li.plus.selected a {
+    color: white;
+}
+
+#qededitormenuwrapper ul li.minus a {
+    color: #a00;
+}
+
+#qededitormenuwrapper ul li.minus.selected {
+    color: white;
+    background-color: #a00;
+}
+
+#qededitormenuwrapper ul li.minus.selected a {
+    color: white;
+}
+
+#qededitormenuwrapper ul li .menuoperation {
+    font-weight: bold;
+    padding-right: 1em;
+}
+
+#qededitormenuwrapper ul li a {
+    display: block;
+}
+
+#qededitormenuwrapper ul li a:hover {
+    background-color: transparent;
+}
+
+#qededitormenuwrapper span.menuname {
+    display: none;
+}
+
+.sdbeforebuttons {
+    position: relative;
+}
+
+.sdbeforebuttons #qededitormenuwrapper {
+    left: 0;
+    top: 0;
+}
+
+.sdafterbuttons #qededitormenuwrapper {
+    right: 0;
+    top: 0;
+}
+
+/********* mathquill: text vs. math ****************/
+.qededitor .mathquill-textbox.mathquill-editable.hasCursor,
+.qededitor .mathquill-editable.mathquill-rendered-math .hasCursor.text {
+    -ms-box-shadow: #f55 0 0 3px 2px;
+    -o-box-shadow: #f55 0 0 3px 2px;
+    -webkit-box-shadow: #f55 0 0 3px 2px;
+    box-shadow: #f55 0 0 3px 2px;
+/*     border: 1px solid #faa; */
+}
+/*.qededitor .relation .mathquill-editable.mathquill-rendered-math.hasCursor,
+.qededitor .mathquill-editable.mathquill-rendered-math.hasCursor,
+.qededitor .mathquill-editable.mathquill-rendered-math .hasCursor {
+    border: 1px solid #aaf;
+}*/
+
+
+/*************** MathQuill -tweak **********************/
+.mathquill-embedded-latex.mathquill-rendered-math,
+.mathquill-editable.mathquill-rendered-math {white-space: pre-wrap;}
+.mathquill-embedded-latex.mathquill-rendered-math *,
+.mathquill-editable.mathquill-rendered-math *,
+.mathquill-editable.mathquill-textbox .mathquill-rendered-math span
+ {white-space: nowrap;}
+ 
+/********* Plugin system **************************/
+div.pluginbuttons {
+    display: inline-block;
+    border: 2px solid #faa;
+    border-bottom: none;
+    border-radius: 8px 8px 0 0;
+    margin: 0 0.5em;
+    background-color: white;
+}
+
+div.pluginbuttons ul {
+    position: absolute;
+    background-color: white;
+    border: 2px solid #faa;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: none;
+    border-top: none;
+    margin-left: -2px;
+    z-index: 50;
+}
+
+div.pluginbuttons:hover ul {
+    display: block;
+    
+}
+
+div.pluginbuttons ul li a.pluginbutton {
+    display: block;
+    padding: 0.2em 0.5em;
+}
+
+div.pluginbuttons ul li a.pluginbutton:hover {
+    background-color: #faa;
+}
+
+div.pluginbuttons ul li a.pluginbutton img {
+    border: none;
+    margin: 0.2em 0.6em 0.2em 0.2em;
+    vertical-align: middle;
+}
+
+
+
+
+/*************** TiddlyWiki specific *************************/
+
+.tiddler #mathbuttonpanel {
+    top: 10em;
+    right: auto;
+}
+
+.qedcontexttiddlywiki .structuredderivation {
+    -moz-border-image: url([[paperrip.png]]) 8 1 8 1 repeat repeat;
+    -webkit-border-image: url([[paperrip.png]]) 8 1 8 1 repeat repeat;
+    -o-border-image: url([[paperrip.png]]) 8 1 8 1 repeat repeat;
+    border-image: url([[paperrip.png]]) 8 1 8 1 fill repeat repeat;
+    border-style: solid;
+}
+
+.qedcontexttiddlywiki .structuredderivation .button.command_qededit {
+  background: transparent url('[[button-edit.png.base64]]') center center no-repeat;
+}
+
+.qedcontexttiddlywiki .structuredderivation a.button.command_qedclose.command_editorclose {
+  background: transparent url('[[button-close.png.base64]]') center center no-repeat;
+}
+
+/*}}}*/
